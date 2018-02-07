@@ -28,25 +28,25 @@ alert("Yes or No only please.")
 var ansThreeInitial=prompt("Do I use earbuds?");
 var ansThree=ansThreeInitial.toLowerCase();
 if(ansThree === "yes"||ansThree === "y"){
-    alert("No, I hate putting them in.")
-    console.log("You answered that I use them, but I don't, they make me feel like there are slugs in my ears.")
+    alert("No, I hate putting them in.");
+    console.log("You answered that I use them, but I don't, they make me feel like there are slugs in my ears.");
 }
 else if(ansThree === "no"||ansThree === "n"){
-alert("Right!")
-console.log("You were right, I don't, I use over the ear speakers.")
+alert("Right!");
+console.log("You were right, I don't, I use over the ear speakers.");
 }
 else{
-alert("Yes or No only please.")
+alert("Yes or No only please.");
 }
 var ansFourInitial=prompt("Is my Laptop plugged in?");
 var ansFour=ansFourInitial.toLowerCase();
 if(ansFour === "y"||ansFour === "yes")        {
-            alert("What a relief.")
+            alert("What a relief.");
             console.log("Good thing it's plugged in, it'd be awful to forget my charger two days in a row.")
         }
         else if(ansFour === "no"||ansFour === "n")        {
-            alert("Uh oh.")
-            console.log("I hope you're just pulling my leg with that answer, I'd hope I remembered this time.")
+            alert("Uh oh.");
+            console.log("I hope you're just pulling my leg with that answer, I'd hope I remembered this time.");
         }
         else        {
         alert("Yes or No only please.")
