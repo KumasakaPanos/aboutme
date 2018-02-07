@@ -1,65 +1,130 @@
 "use strict";
+var correctAnswers=0
+var username=prompt("Hello user, what's ya name?")
 var ansOneInitial=prompt("Am I a minor?");
 var ansOne=ansOneInitial.toLowerCase();
 if(ansOne === "yes"||ansOne === "y") {
 alert("No... Do I really look that young?")
-console.log("Your answer was that I was a minor.")
 }
 else if(ansOne === "no"||ansOne === "n") {
     alert("Right.")
-    console.log("You answered that I was a major.")
+    correctAnswers+=1
+    console.log("User replied "+ansOne)
 }
 else
     alert("Yes or No only please.")
+   console.log("For question one user replied "+ansOne)
 var ansTwoInitial=prompt("Is my Laptop older than Windows 10?");
 var ansTwo=ansTwoInitial.toLowerCase();
 if(ansTwo === "yes"||ansTwo === "y") {
-    alert("I still like it though...")
-    console.log("You said it was old, and it is. It's a Thinkpad T420, a gift from my brother.")
+    alert("Right. I still like it though...")
+    correctAnswers+=1
 }
 else if(ansTwo === "no"||ansTwo === "n") {
     alert("No, it is, but I stil like it.")
-    console("I'm glad my laptop impressed you, but it's a Thinkpad T420, with a proud windows 7 sticker on it.")
 }
 else {
 alert("Yes or No only please.")
 }
+console.log("For question two user replied "+ansTwo)
 var ansThreeInitial=prompt("Do I use earbuds?");
 var ansThree=ansThreeInitial.toLowerCase();
 if(ansThree === "yes"||ansThree === "y") {
     alert("No, I hate putting them in.");
-    console.log("You answered that I use them, but I don't, they make me feel like there are slugs in my ears.");
 }
 else if(ansThree === "no"||ansThree === "n") {
 alert("Right!");
-console.log("You were right, I don't, I use over the ear speakers.");
+correctAnswers+=1
 }
 else {
 alert("Yes or No only please.");
 }
-var ansFourInitial=prompt("Is my Laptop plugged in?");
+console.log("For question three user replied "+ansThree)
+var ansFourInitial=prompt("Are all dogs beautiful?");
 var ansFour=ansFourInitial.toLowerCase();
 if(ansFour === "y"||ansFour === "yes") {
-            alert("What a relief.");
-            console.log("Good thing it's plugged in, it'd be awful to forget my charger two days in a row.")
+            alert("Indeed.");
+            correctAnswers+=1
         }
         else if(ansFour === "no"||ansFour === "n") {
-            alert("Uh oh.");
-           console.log("I hope you're just pulling my leg with that answer, I'd hope I remembered this time.");
+            alert("How dare you");
         }
         else {
         alert("Yes or No only please.")
         }
-var ansFiveInitial=prompt("Is there a coffee mug where I sit?");
+        console.log("For question four user replied "+ansFour)
+var ansFiveInitial=prompt("Is my backpack Black?");
 var ansFive=ansFiveInitial.toLowerCase();
 if(ansFive === "yes"||ansFive === "y") {
-    alert("I should put that in the washing machine")
-    console.log("I just don't want to leave a mess in the classroom.")
+    alert("True.")
+    correctAnswers+=1
 }
 else if(ansFive === "no"||ansFive === "n") {
-    alert("Ah, so that's why I'm thirsty.")
-    console.log("I guess I could have already washed the mug and put it away too.")
+    alert("Maybe I got a new one... Did I break it?")
 }
 else {
 alert("Yes or No only please.")
 }
+console.log("For question five user replied "+ansFive)
+var correct=false
+var attempt=0
+var answerNum=prompt("What is the answer?")
+do{
+if(answerNum=="42")
+{
+    correct=true
+}
+else
+{
+    attempt+=1
+    if(answerNum>42)
+    {
+      alert("Too high.")
+    }
+    if(answerNum<42)
+    {
+      alert("Too low.")
+    }
+    alert(4-attempt+" tries left.")
+    answerNum=prompt("Try again.")
+}
+}while(attempt<3&&correct===false)
+if(answerNum=="42")
+{
+alert("Good number. But what's the question?")
+correctAnswers+=1
+}
+else
+{
+alert("Hey, you'll get it next time.")
+}
+var triesNumber=attempt+1
+console.log("The user finished with the question "+correct+" after "+attempt+" tries.")
+var correctState=false
+var attemptState=0
+var answerState=prompt("Name a state or Province I have vacationed in.")
+answerState=answerState.toLowerCase()
+do{
+    if(answerState==="oregon"||answerState==="hawaii"||answerState==="washington"||answerState==="victoria")
+    {
+        correctState=true
+    }
+    else
+    {
+        alert(4-attemptState+" tries left.")
+        answerState=prompt("Try again.")
+        attemptState+=1
+    }
+    }while(attemptState<4&&correctState===false)
+    if(correctState===true)
+    {
+        alert("Good guess!")
+    correctAnswers+=1
+    }
+    else
+    {
+    alert("Hey, you'll get it next time.")
+    }
+    var triesState=attemptState+1
+    console.log("The user finished with the question "+correctState+" after "+attempt+" tries.")
+    alert("You got "+correctAnswers+"/7 correct, "+username)
