@@ -26,31 +26,36 @@ function question6() {
     correctAnswers+=1;
   }
   else {
-    alert('Hey, you\'ll get it next time.');
+    alert('The answer was 42.');
   }
   console.log('The user finished with the question ' + correct + ' after ' + attempt + ' tries.');
 }
 function question7() {
+  var states=['oregon','hawaii','washington','victoria','idaho','utah','montana','california'];
   var correctState = false;
   var attempt = 0;
-  var answer = prompt('Name a state or Province I have vacationed in.');
+  var answer = prompt('Name a state or Province I have been.');
+  var i;
   answer = answer.toLowerCase();
-  do {
-    if (answer === 'oregon' || answer === 'hawaii' || answer === 'washington' || answer === 'victoria') {
-      correctState = true;
+  while (attempt < 4 && correctState === false) {
+    for (i=0;i<states.length;i++) 
+    {
+      if (states[i]===answer)
+      {correctState=true;}
     }
-    else {
+    i=0;
+    if (correctState===false){
       alert(4 - attempt + ' tries left.');
       answer = prompt('Try again.');
       attempt += 1;
     }
-  } while (attempt < 4 && correctState === false);
+  } 
   if (correctState === true) {
     alert('Good guess!');
     correctAnswers += 1;
   }
   else {
-    alert('Hey, you\'ll get it next time.');
+    alert('Hey, you\'ll get it next time. You could have responded with Washington, Idaho, Victoria, Hawaii, California or Oregon.');
   }
   console.log('The user finished with the question ' + correctState + ' after ' + attempt + ' tries.');
 }
