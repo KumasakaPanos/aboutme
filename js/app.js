@@ -5,7 +5,7 @@ function question6() {
   var correct = false;
   var attempt = 0;
   var answer = prompt('What is the answer?');
-  do {
+  while (attempt < 3 && correct === false) {
     if (answer=== '42') {
       correct = true;
     }
@@ -20,7 +20,7 @@ function question6() {
       alert(4 - attempt + ' tries left.');
       answer = prompt('Try again.');
     }
-  } while (attempt < 3 && correct === false);
+  }
   if (answer === '42') {
     alert('Good number. But what\'s the question?');
     correctAnswers+=1;
